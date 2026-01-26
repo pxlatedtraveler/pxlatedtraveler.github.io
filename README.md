@@ -1,2 +1,2 @@
-# pxlatedtraveler.github.io
+pxlatedtraveler.github.io
 website test
