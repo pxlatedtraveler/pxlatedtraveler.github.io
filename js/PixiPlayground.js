@@ -1,23 +1,19 @@
 // Will be JS to handle PIXI JS
 
-const renderer = new WebGLRenderer();
-const options = {width: 500px, height: 300px};
+const renderer = new PIXI.WebGLRenderer();
+const options = {width: 500, height: 300};
 await renderer.init(options);
+await document.getElementById("pixiPlayground").appendChild(renderer.canvas);
 
-document.getElementById("pixiPlayground").appendChild(renderer.view);
+const stage = new PIXI.Container();
+const sprite = new PIXI.Sprite(renderer.generateTexture(new PIXI.Graphics().beginFill(0X00CCaFF, 1).drawRect(0,0,100,100).endFill()));
+stage.addChild(sprite);
 
-//const stage = new PIXI.Container();
-const sprite = new PIXI.Sprite(renderer.generateTexture(new PIXI.Graphic().beginFill(0X00CCaFF, 1).drawRect(0,0,400,50).endFill()));
-renderer.stage.addChild(sprite);
+renderer.render(stage);
 
-renderer.render({
-    target: stage,
-    clear: true
-});
-
-function render() {
-  renderer.render(renderer.stage);
-  requestAnimationFrame(render);
+function animate() {
+  renderer.render(stage);
+  requestAnimationFrame(animate);
 }
 
-requestAnimationFrame(render);
+requestAnimationFrame(animate);
