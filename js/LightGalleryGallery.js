@@ -1,4 +1,5 @@
 const $galleryContainer = document.getElementById("lg-2d-art");
+console.log($galleryContainer);
 
 const customButtons = `<button type="button" id="lg-toolbar-prev" aria-label="Previous slide" class="lg-toolbar-prev lg-icon">  </button><button type="button" id="lg-toolbar-next" aria-label="Next slide" class="lg-toolbar-next lg-icon">  </button>`;
 
