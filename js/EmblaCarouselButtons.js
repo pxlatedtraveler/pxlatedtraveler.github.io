@@ -4,7 +4,7 @@ const prevButtonNode = wrapperNode.querySelector('.embla__prev');
 const nextButtonNode = wrapperNode.querySelector('.embla__next');
 
 const emblaApi = EmblaCarousel(viewportNode, { loop: false });
-console.log(emblaApi);
+console.log(emblaApi.scrollToPrev());
 
-prevButtonNode.addEventListener('click', () => emblaApi.scrollToPrev(), false);
-nextButtonNode.addEventListener('click', () => emblaApi.scrollToNext(), false);
+prevButtonNode.addEventListener('click', () => emblaApi.goToPrev(), false);
+nextButtonNode.addEventListener('click', () => emblaApi.goToNext(), false);
