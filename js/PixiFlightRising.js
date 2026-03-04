@@ -5,7 +5,16 @@ await document.getElementById("pixiPlayground").appendChild(renderer.canvas);
 
 const stage = new PIXI.Container();
 const dragonContainer = new PIXI.Container();
-const dragonTexture = await PIXI.Assets.load('https://www1.flightrising.com/rendern/350/242967/24296649_350.png');
+//const dragonTexture = await PIXI.Assets.load('https://www1.flightrising.com/rendern/350/242967/24296649_350.png');
+await dragonTexture = function () {
+  var context1 = layer1.getContext('2d');
+  context1.clearRect(0, 0, 350, 350);
+  const imageObj = new Image();
+  imageObj.onload = function () { context1.drawImage(imageObj, 0, 0); }
+  imageObj.src = "https://www1.flightrising.com/rendern/350/242967/24296649_350.png";
+  return imageObj;
+}
+
 const dragonSprite = new PIXI.Sprite(dragonTexture);
 const accentSprite = new PIXI.Sprite();
 dragonContainer.addChild(dragonSprite, accentSprite);
