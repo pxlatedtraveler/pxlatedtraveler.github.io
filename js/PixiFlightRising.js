@@ -7,7 +7,7 @@ const dragonCanvas = document.getElementById("vanillarender");
 
 const stage = new PIXI.Container();
 const dragonContainer = new PIXI.Container();
-//const dragonTexture = await PIXI.Assets.load('https://www1.flightrising.com/rendern/350/242967/24296649_350.png');
+
 function drawVanilla () {
   var context1 = dragonCanvas.getContext('2d');
   context1.clearRect(0, 0, 350, 350);
@@ -17,6 +17,7 @@ function drawVanilla () {
 }
 drawVanilla();
 
+const dragonTexture = await PIXI.Assets.load(dragonCanvas);
 const dragonSprite = new PIXI.Sprite(dragonTexture);
 const accentSprite = new PIXI.Sprite();
 dragonContainer.addChild(dragonSprite, accentSprite);
