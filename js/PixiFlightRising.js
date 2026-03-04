@@ -5,7 +5,7 @@ await document.getElementById("pixiPlayground").appendChild(renderer.canvas);
 
 const stage = new PIXI.Container();
 const dragonContainer = new PIXI.Container();
-const dragonSprite = new PIXI.Sprite(new PIXI.Texture.from("https://www1.flightrising.com/rendern/350/242967/24296649_350.png"));
+const dragonSprite = new PIXI.Sprite.from("https://www1.flightrising.com/rendern/350/242967/24296649_350.png");
 const accentSprite = new PIXI.Sprite();
 dragonContainer.addChild(dragonSprite, accentSprite);
 stage.addChild(dragonContainer);
