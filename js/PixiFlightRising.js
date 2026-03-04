@@ -29,7 +29,7 @@ input.addEventListener("click", grabDragon);
 
 function grabDragon() {
   if (input.value !== "") {
-    dragonSprite.texture = dragonTexture.from(input.value);
+    dragonSprite.texture = PIXI.Texture.from(input.value);//dragonTexture.from(input.value);
     // request new frame?
     console.log(input.value);
   }
