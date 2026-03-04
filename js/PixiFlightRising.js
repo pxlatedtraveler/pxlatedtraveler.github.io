@@ -17,8 +17,8 @@ function drawVanilla () {
 }
 drawVanilla();
 
-const dragonTexture = await PIXI.Assets.load(dragonCanvas);
-const dragonSprite = new PIXI.Sprite(dragonTexture);
+//const dragonTexture = await PIXI.Assets.load(dragonCanvas);
+const dragonSprite = new PIXI.Sprite.from(dragonCanvas);
 const accentSprite = new PIXI.Sprite();
 dragonContainer.addChild(dragonSprite, accentSprite);
 stage.addChild(dragonContainer);
