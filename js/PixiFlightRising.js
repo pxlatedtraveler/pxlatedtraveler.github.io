@@ -6,7 +6,7 @@ await document.getElementById("pixiPlayground").appendChild(renderer.canvas);
 const stage = new PIXI.Container();
 const dragonContainer = new PIXI.Container();
 //const dragonTexture = await PIXI.Assets.load('https://www1.flightrising.com/rendern/350/242967/24296649_350.png');
-await dragonTexture = function () {
+await const dragonTexture = function () {
   var context1 = layer1.getContext('2d');
   context1.clearRect(0, 0, 350, 350);
   const imageObj = new Image();
