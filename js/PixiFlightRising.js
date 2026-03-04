@@ -5,10 +5,8 @@ await document.getElementById("pixiPlayground").appendChild(renderer.canvas);
 
 const stage = new PIXI.Container();
 const dragonContainer = new PIXI.Container();
-const dragonTexture = new PIXI.Texture();
-const dragonSprite = new PIXI.Sprite(dragonTexture);
-const accentTexture = new PIXI.Texture();
-const accentSprite = new PIXI.Sprite(accentTexture);
+const dragonSprite = new PIXI.Sprite();
+const accentSprite = new PIXI.Sprite();
 dragonContainer.addChild(dragonSprite, accentSprite);
 stage.addChild(dragonContainer);
 
@@ -25,12 +23,13 @@ const btn = document.getElementById("dragonbtn"); //type button
 const input = document.getElementById("dragoninput"); //type url
 //const accent = document.getElementById("accentselection"); //dropdown
 
-input.addEventListener("click", grabDragon);
+btn.addEventListener("click", grabDragon);
 
 function grabDragon() {
   if (input.value !== "") {
-    dragonSprite.texture = PIXI.Texture.from(input.value);//dragonTexture.from(input.value);
-    // request new frame?
+    dragonSprite.texture = new PIXI.Texture.from(input.value);
+    dragonSprite.texture.dynamic = true;
+    requestAnimationFrame(animate);
     console.log(input.value);
   }
 }
