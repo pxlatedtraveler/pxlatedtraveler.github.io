@@ -29,7 +29,7 @@ input.addEventListener("click", grabDragon);
 
 function grabDragon() {
   if (input.value !== "") {
-    dragonSprite.texture.from(input.value);
+    dragonSprite.texture = dragonTexture.from(input.value);
     // request new frame?
     console.log(input.value);
   }
