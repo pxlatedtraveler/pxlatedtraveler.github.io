@@ -22,7 +22,11 @@ function drawVanilla () {
 drawVanilla();
 
 function drawPixi () {
-  dragonTexture = PIXI.Texture.from(dragonCanvas, { resourceOptions: { dynamic: true } })
+  let base64 = dragonCanvas.toDataURL('image/png');
+  const dragonTexture = await PIXI.Assets.load(base64);
+  //const dragonTexture = PIXI.Texture.from(base64);
+  //dragonTexture = PIXI.Texture.from(dragonCanvas, { resourceOptions: { dynamic: true } });
+  dragonTexture = PIXI.Texture.from(texture);
   dragonSprite = new PIXI.Sprite(dragonTexture);
   accentSprite = new PIXI.Sprite();
   dragonContainer.addChild(dragonSprite, accentSprite);
