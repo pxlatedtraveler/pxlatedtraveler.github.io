@@ -22,8 +22,8 @@ function drawVanilla () {
 drawVanilla();
 
 function drawPixi () {
-  let base64 = dragonCanvas.toDataURL('image/png');
-  const dragonTexture = await PIXI.Assets.load(base64);
+  let base64Data = dragonCanvas.toDataURL('image/png');
+  const dragonTexture = await PIXI.Assets.load(base64Data);
   //const dragonTexture = PIXI.Texture.from(base64);
   //dragonTexture = PIXI.Texture.from(dragonCanvas, { resourceOptions: { dynamic: true } });
   dragonTexture = PIXI.Texture.from(texture);
