@@ -7,7 +7,7 @@ const dragonCanvas = document.getElementById("vanillarender");
 
 const stage = new PIXI.Container();
 const dragonContainer = new PIXI.Container();
-const dragonSprite;
+let dragonSprite;
 
 function drawVanilla () {
   var context1 = dragonCanvas.getContext('2d');
