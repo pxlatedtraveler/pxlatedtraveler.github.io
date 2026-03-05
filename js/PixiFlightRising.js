@@ -16,6 +16,7 @@ function drawVanilla () {
   imageObj.onload = function () { context1.drawImage(imageObj, 0, 0); }
   imageObj.src = "https://www1.flightrising.com/rendern/350/242967/24296649_350.png";
   dragonSprite = PIXI.Sprite.from(dragonCanvas);
+  dragonSprite.alpha = 0;
 }
 drawVanilla();
 
