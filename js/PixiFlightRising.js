@@ -22,11 +22,10 @@ function drawVanilla () {
 drawVanilla();
 
 function drawPixi () {
-  let base64 = dragonCanvas.toDataURL('image/png');
-  dragonTexture = await PIXI.Assets.load(base64);
-  //dragonTexture = PIXI.Texture.from(base64);
-  //dragonTexture = PIXI.Texture.from(dragonCanvas, { resourceOptions: { dynamic: true } });
-  dragonTexture = PIXI.Texture.from(texture);
+  let b64Data = dragonCanvas.toDataURL('image/png');
+  dragonTexture = await PIXI.Assets.load(b64Data);
+  //dragonTexture = PIXI.Texture.from(b64Data);
+  //dragonTexture = PIXI.Texture.from(dragonCanvas, { resourceOptions: { dynamic: true } }); //works but canvas image is tainted cause of CORS policy
   dragonSprite = new PIXI.Sprite(dragonTexture);
   accentSprite = new PIXI.Sprite();
   dragonContainer.addChild(dragonSprite, accentSprite);
