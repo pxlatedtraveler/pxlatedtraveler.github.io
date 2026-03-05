@@ -23,8 +23,8 @@ drawVanilla();
 
 async function drawPixi () {
   let b64Data = dragonCanvas.toDataURL('image/png');
-  dragonTexture = await PIXI.Assets.load(b64Data);
-  //dragonTexture = PIXI.Texture.from(b64Data);
+  //dragonTexture = await PIXI.Assets.load(b64Data); // syntax works. But canvas wont export due to tainted canvas flag from CORS policy.
+  dragonTexture = PIXI.Texture.from(b64Data);
   //dragonTexture = PIXI.Texture.from(dragonCanvas, { resourceOptions: { dynamic: true } }); //works but canvas image is tainted cause of CORS policy
   dragonSprite = new PIXI.Sprite(dragonTexture);
   accentSprite = new PIXI.Sprite();
