@@ -7,7 +7,8 @@ const dragonCanvas = document.getElementById("vanillarender");
 
 const stage = new PIXI.Container();
 const dragonContainer = new PIXI.Container();
-let dragonSprite, dragonTexture;
+stage.addChild(dragonContainer);
+let dragonSprite, dragonTexture, accentSprite;
 
 function drawVanilla () {
   var context1 = dragonCanvas.getContext('2d');
@@ -23,15 +24,11 @@ drawVanilla();
 function drawPixi () {
   dragonTexture = PIXI.Texture.from(dragonCanvas, { resourceOptions: { dynamic: true } })
   dragonSprite = new PIXI.Sprite(dragonTexture);
+  accentSprite = new PIXI.Sprite();
+  dragonContainer.addChild(dragonSprite, accentSprite);
+  
+  renderer.render(stage);
 }
-
-//const dragonTexture = await PIXI.Assets.load(dragonCanvas);
-//const dragonSprite = await new PIXI.Sprite.from(dragonCanvas);
-const accentSprite = new PIXI.Sprite();
-dragonContainer.addChild(dragonSprite, accentSprite);
-stage.addChild(dragonContainer);
-
-renderer.render(stage);
 
 function animate() {
   renderer.render(stage);
